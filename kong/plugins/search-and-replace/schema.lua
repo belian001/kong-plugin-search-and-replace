@@ -18,7 +18,7 @@ local schema = {
 	      type = "string",
               required = false
                } },
-          { response_return_string = {
+          { response_replace_string = {
 	      type = "string",
               required = false
                } },
