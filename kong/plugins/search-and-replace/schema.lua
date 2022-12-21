@@ -14,49 +14,11 @@ local schema = {
         type = "record",
         fields = {
           -- a standard defined field (typedef), with some customizations
-          { request_maximum_payload_size = {
-	      type = "integer",
-              required = false,
-              gt = 0,
-               } },
-          { request_maximum_payload_no_content_length_forward_unprocessed = {
-	      type = "boolean",
-              required = false,
-              default = false,
-               } },
-          { request_maximum_payload_exceeded_forward_unprocessed = {
-	      type = "boolean",
-              required = false,
-              default = true,
-               } },
-          { request_search_string = {
-	      type = "string",
-              required = false
-               } },
-          { request_replace_string = {
-	      type = "string",
-              required = false
-               } },
-          { response_maximum_payload_size = {
-	      type = "integer",
-              required = false,
-              gt = 0,
-               } },
-          { response_maximum_payload_no_content_length_forward_unprocessed = {
-	      type = "boolean",
-              required = false,
-              default = true,
-               } },
-          { response_maximum_payload_exceeded_forward_unprocessed = {
-	      type = "boolean",
-              required = false,
-              default = true,
-               } },
           { response_search_string = {
 	      type = "string",
               required = false
                } },
-          { response_replace_string = {
+          { response_return_string = {
 	      type = "string",
               required = false
                } },
