@@ -15,8 +15,7 @@ function plugin:body_filter(plugin_conf)
       local replace_string = plugin_conf.response_replace_string
       if string.find(body, plugin_conf.response_search_string) then
         kong.log.debug("Response writer string: " .. replace_string)
-        local replaced_body = replace_string
-        kong.response.set_raw_body(replaced_body)
+        kong.response.set_raw_body(replace_string)
       end
     end
   end
