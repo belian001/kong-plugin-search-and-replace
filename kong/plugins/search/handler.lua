@@ -37,6 +37,6 @@ end
       end
     end
   end
-end ]]
+end--]]
 
 return plugin
