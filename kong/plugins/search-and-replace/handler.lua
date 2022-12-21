@@ -13,13 +13,11 @@ function plugin:body_filter(plugin_conf)
     if body then
       kong.log.debug("Response search string: " .. plugin_conf.response_search_string)
       local replace_string = plugin_conf.response_replace_string
-      if not replace_string then
-        replace_string = ""
+      if string.find(body, plugin_conf.response_search_string) then
+        kong.log.debug("Response writer string: " .. replace_string)
+        local replaced_body = replace_string
+        kong.response.set_raw_body(replaced_body)
       end
-      kong.log.debug("Response replace string: " .. replace_string)
-	      
-      local replaced_body = body:gsub(plugin_conf.response_search_string, replace_string)
-      kong.response.set_raw_body(replaced_body)
     end
   end
 end 
